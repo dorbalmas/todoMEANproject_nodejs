@@ -81,29 +81,3 @@ router.get("/SearchTodo/", (req, res) => {
 });
 
 module.exports = router;
-
-// res.header("Access-Control-Allow-Origin", "*");
-
-// // `http://localhost:3000/tasks/single/${}`
-// router.get("/single/:id", (req, res, next) => {
-// 	tasksModel
-// 	  .findOne({ _id: req.params.id })
-// 	  .then((data) => {
-// 		res.json(data);
-// 	  })
-// 	  .catch((err) => {
-// 		res.status(400).json(err);
-// 	  });
-//   });
-//   // `http://localhost:3000/tasks/category/${}`
-//   router.get("/category/:categoryId", (req, res) => {
-// 	let categoryId = req.params.categoryId;
-// 	tasksModel
-// 	  .find({ category: categoryId })
-// 	  .then((data) => {
-// 		res.json(data);
-// 	  })
-// 	  .catch((err) => {
-// 		res.status(400).json(err);
-// 	  });
-//   });
