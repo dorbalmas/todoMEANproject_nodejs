@@ -1,13 +1,17 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const router = express.Router();
+const config = require("../config/default.json");
 const cors = require("cors");
 router.use(cors());
-
-mongoose.connect("mongodb://localhost:27017/task_list", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+// mongoose.connect("mongodb://localhost:27017/task_list", {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+// });
+mongoose.connect(
+  `mongodb+srv://koko:${config.password}@cluster0-rv00q.gcp.mongodb.net/task_list?retryWrites=true&w=majority`,
+  { useNewUrlParser: true, useUnifiedTopology: true }
+);
 
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
